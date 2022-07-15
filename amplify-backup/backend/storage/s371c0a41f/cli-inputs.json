@@ -1,0 +1,13 @@
+{
+  "resourceName": "s371c0a41f",
+  "policyUUID": "71c0a41f",
+  "bucketName": "amplifyuidemoa34e5803fc474a7a8c7159b8e2d68d7c",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ"
+  ],
+  "triggerFunction": "S3Trigger933f75af",
+  "groupAccess": {}
+}
