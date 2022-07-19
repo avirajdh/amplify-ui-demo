@@ -1,7 +1,6 @@
 import * as React from 'react';
 import ImageUploading from 'react-images-uploading';
-import Button from 'react-bootstrap/Button';
-import { useParams } from 'react-router-dom';
+import { Link as ReactRouterLink, useParams } from 'react-router-dom';
 import {
     Flex,
     TextField,
@@ -9,8 +8,9 @@ import {
     CheckboxField,
     Image,
     Link,
-    TextAreaField
-  } from '@aws-amplify/ui-react';
+    TextAreaField,
+    Button
+} from '@aws-amplify/ui-react';
 
 export function CreateReview() {
     const sportsCardId = useParams().id;
@@ -19,7 +19,17 @@ export function CreateReview() {
     const [review, setReview] = React.useState("");
     const [verified, setVerified] = React.useState(false);
     const [rating, setRating] = React.useState(0.0)
-    const maxNumber = 10;
+    const maxNumber = 1;
+
+    const date = new Date(Date.now());
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    const months = ["January", "February", "March", "April", "May", "June", "July",
+                    "August", "September", "October", "November", "December"]
+    const dateFormatted = days[date.getDay()] + " " + months[date.getMonth()] + " "
+    + date.getDate() + ", " + date.getFullYear() + " at " + date.getHours() + ":" + date.getMinutes();
+
+    const backToReview = "../sportscards/" + sportsCardId + "/reviews";
+
     const onChange = (imageList) => {       
         setImages(imageList);
         console.log("Image List", imageList)
@@ -42,7 +52,7 @@ export function CreateReview() {
         const newReview = {
             cardId: parseInt(sportsCardId, 10),
             customerName: name,
-            dateOfReview: Date.now() + "",
+            dateOfReview: date.getHours() >= 12 ? dateFormatted + " PM" : dateFormatted + " AM",
             reviewText: review,
             isLiked: false,
             imageSrc: images[0]['data_url'],
@@ -83,20 +93,20 @@ export function CreateReview() {
                         onImageRemove,isDragging,dragProps,}) => (
                             <div>
                                 <Button
-                                style={isDragging ? { color: 'red' } : undefined}
+                                style={isDragging ? { color: 'red' } : {marginRight:'1em', marginBottom:'1em'}}
                                 onClick={onImageUpload}
                                 {...dragProps}
                                 >
                                 Click or Drop here
                                 </Button>
                                 &nbsp;
-                                <Button onClick={onImageRemoveAll}>Remove all images</Button>
+                                <Button style={{marginBottom:'1em'}} onClick={onImageRemoveAll}>Remove all images</Button>
                                 {imageList.map((image, index) => (
                                     <div key={index}>
                                         <Image src={image['data_url']} alt=""/>
                                         <div>
-                                        <Button onClick={() => onImageUpdate(index)}>Update</Button>
-                                        <Button onClick={() => onImageRemove(index)}>Remove</Button>
+                                        <Button variation="primary" style={{marginRight:'1em',marginBottom:'1em'}} onClick={() => onImageUpdate(index)}>Update</Button>
+                                        <Button variation="primary" style={{marginRight:'1em',marginBottom:'1em'}} onClick={() => onImageRemove(index)}>Remove</Button>
                                         </div>
                                     </div>
                                 ))}
@@ -104,8 +114,8 @@ export function CreateReview() {
                         )}
                      </ImageUploading>
                     <Flex direction={"row"} justifyContent={"flex-end"}>
-                        <Button variant='success' onClick={handleNewReview}>Save</Button>
-                        <Link href={`/sportscards/${sportsCardId}/reviews`}><Button variant='primary'>Close</Button></Link>
+                        <Button variation='primary' onClick={handleNewReview}>Save</Button>
+                        <Link as={ReactRouterLink} to={backToReview}><Button variation='primary'>Close</Button></Link>                      
                     </Flex>
                 </Flex>
             </Card>
