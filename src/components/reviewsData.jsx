@@ -18,7 +18,7 @@ export const REVIEW_DATA = [
         dateOfReview: "Wed July 6, 2022 at 12:00 PM",
         reviewText: "bour4oifoptgv[",
         isLiked: true,
-        imageSrc: "image source",
+        imageSrc: "https://beckett-www.s3.amazonaws.com/news/news-content/uploads/2020/06/2003-04-Upper-Deck-Exquisite-Rookie-Auto-Patch-Parallel-LeBron-James-BGS-9-5-Goldin-July-2020.jpg",
         verified: false,
         rating: 5.0
     },
@@ -29,7 +29,7 @@ export const REVIEW_DATA = [
         dateOfReview: "Wed July 6, 2022 at 12:00 PM",
         reviewText: "bour4oifoptgv[",
         isLiked: true,
-        imageSrc: "image source",
+        imageSrc: "https://beckett-www.s3.amazonaws.com/news/news-content/uploads/2020/06/2003-04-Upper-Deck-Exquisite-Rookie-Auto-Patch-Parallel-LeBron-James-BGS-9-5-Goldin-July-2020.jpg",
         verified: false,
         rating: 5.0
     },
@@ -40,7 +40,7 @@ export const REVIEW_DATA = [
         dateOfReview: "Wed July 6, 2022 at 12:00 PM",
         reviewText: "bour4oifoptgv[",
         isLiked: true,
-        imageSrc: "image source",
+        imageSrc: "https://beckett-www.s3.amazonaws.com/news/news-content/uploads/2020/06/2003-04-Upper-Deck-Exquisite-Rookie-Auto-Patch-Parallel-LeBron-James-BGS-9-5-Goldin-July-2020.jpg",
         verified: false,
         rating: 5.0
     },
@@ -51,7 +51,7 @@ export const REVIEW_DATA = [
         dateOfReview: "Wed July 6, 2022 at 12:00 PM",
         reviewText: "bour4oifoptgv[",
         isLiked: true,
-        imageSrc: "image source",
+        imageSrc: "https://beckett-www.s3.amazonaws.com/news/news-content/uploads/2020/06/2003-04-Upper-Deck-Exquisite-Rookie-Auto-Patch-Parallel-LeBron-James-BGS-9-5-Goldin-July-2020.jpg",
         verified: false,
         rating: 5.0
     },
