@@ -35,11 +35,11 @@ function App({ signOut, user}) {
           <Flex direction={"row"} alignContent={"flex-start"} marginTop={"1rem"}>
             <Flex direction={"row"} justifyContent={"flex-start"} marginLeft={"1rem"}>
               <Menu menuAlign="start" variation="primary" size="default">
-                <MenuItem><a href="/">Home<FaHome /></a></MenuItem>
+                <MenuItem><Link to="/">Home<FaHome /></Link></MenuItem>
                 <Divider />
-                <MenuItem><a href="/sportscards">Sports Cards<FaBasketballBall /></a></MenuItem>
+                <MenuItem><Link to="/sportscards">Sports Cards<FaBasketballBall /></Link></MenuItem>
                 <Divider />
-                <MenuItem><a href="/faqs">FAQs<FaAnchor /></a></MenuItem>
+                <MenuItem><Link to="/faqs">FAQs<FaAnchor /></Link></MenuItem>
               </Menu>
               <Button onClick={signOut} variation='primary'>Sign out</Button>
             </Flex>  
@@ -50,7 +50,6 @@ function App({ signOut, user}) {
                 {isOpen && <Cart closeCart={closeCart}/>}
               </Flex>
           </Flex>
-      <Router>
         <Routes>
           <Route path="/" element={<HomePage />}/>
           <Route path="/sportscards" element={<SportsCards></SportsCards>} />
@@ -58,7 +57,6 @@ function App({ signOut, user}) {
           <Route path="/sportscards/:id/reviews/create-review" element={<CreateReview></CreateReview>} />
           <Route path="/faqs" element={<Faqs />} />
         </Routes>
-      </Router>
     </main>
   );
 }
