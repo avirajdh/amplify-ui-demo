@@ -65,7 +65,7 @@ export function SportsCard(props) {
                     fillColor="#f4a41d"
                   ></Rating>
                   <Text fontSize="small" fontWeight="lighter">
-                    <Link to={`/sportscards/${product.id}/reviews`} key={product.id}> 2 reviews</Link>
+                    <Link to={`/sportscards/${product.id}/reviews`} key={product.id}> Reviews</Link>
                   </Text>
                 </Flex>
                 <Divider />
