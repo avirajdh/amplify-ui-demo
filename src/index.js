@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '@aws-amplify/ui-react/styles.css';
 import { BrowserRouter } from 'react-router-dom';
+import {MakeServer} from './server'
 MakeServer();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
